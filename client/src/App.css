@@ -1,0 +1,58 @@
+.App{
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 550px;
+  height: 100px;
+}
+
+.chat-box{
+  
+  border-radius: 10px;
+}
+.chat-body{
+  border: 1px solid #263238;
+  position: relative;
+  background-color: white;
+  width: 500px;
+  height: 400px;
+  margin: 10px;
+}
+.message-container{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-wrap:break-word;
+  overflow-x: hidden;
+}
+.chat-body .message-container::-webkit-scrollbar{
+  display: none;
+}
+
+.message-time{
+  text-align: center;
+}
+.message-username{
+  margin: 10px;
+}
+#other .message{
+  width: 40%;
+  margin: 10px;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: aquamarine;
+
+}
+
+#you .message-username{
+  margin-left: 85%;
+}
+#you .message{
+  width: 40%;
+  margin-left: 50%;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: rgb(127, 214, 255);
+
+}
