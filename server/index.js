@@ -6,6 +6,7 @@ const {Server} = require("socket.io");
 app.use(cors());
 const server = http.createServer(app);
 require('dotenv').config()
+const PORT = process.env.PORT || 3001
 
 const io = new Server(server,{
     cors:{
@@ -29,6 +30,11 @@ io.on("connection",(socket)=>{
     })
 })
 
-server.listen(process.env.PORT || 3001,()=>{
+server.listen(PORT || 3001,()=>{
     console.log("server running");
+})
+
+app.get('/',(req,res)=>{
+    res.write(`<h1>Socket IO start on Port : ${PORT}</h1>`);
+    res.end();
 })
