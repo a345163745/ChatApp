@@ -1,10 +1,11 @@
 const express = require('express');
-const app = express();
+const app = express(); //create new express application for you
 const http = require("http"); //need this to build server together with socketio
 const cors = require("cors");
 const {Server} = require("socket.io");
 app.use(cors());
 const server = http.createServer(app);
+require('dotenv').config()
 
 const io = new Server(server,{
     cors:{
@@ -28,6 +29,6 @@ io.on("connection",(socket)=>{
     })
 })
 
-server.listen(3001,()=>{
+server.listen(process.env.PORT || 3001,()=>{
     console.log("server running");
 })
