@@ -8,13 +8,16 @@ app.use(cors());
 app.use(router)
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3001;
-
+/*
 const io = new Server(server,{
     cors:{
         origin:"http://localhost:3000", //where we get info from
         methods:["GET","POST"], //what method we accept
     }
 })
+*/
+const io = socketio(server);
+app.use(cors());
 
 io.on("connection",(socket)=>{
     console.log(`User Connected ${socket.id}`);
