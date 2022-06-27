@@ -3,7 +3,9 @@ const app = express(); //create new express application for you
 const http = require("http"); //need this to build server together with socketio
 const cors = require("cors");
 const {Server} = require("socket.io");
+const router = require("./router")
 app.use(cors());
+app.use(router)
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3001;
 
