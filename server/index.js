@@ -16,7 +16,7 @@ const io = new Server(server,{
     }
 })
 */
-const io = Server(server);
+const io = new Server(server);
 app.use(cors());
 
 io.on("connection",(socket)=>{
