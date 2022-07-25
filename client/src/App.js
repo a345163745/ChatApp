@@ -3,7 +3,7 @@ import './App.css';
 import io from "socket.io-client"
 import Chat from "./component/Chat"
 import {Button,TextField} from "@mui/material"
-const socket = io.connect("https://bothitman-chat-app.herokuapp.com/");//use to connect from frontend to backend
+const socket = io.connect("http://localhost:3001");//use to connect from frontend to backend
 function App() {
   const [username,setUsername] = useState("")
   const [room,setRoom] = useState("")

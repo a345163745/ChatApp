@@ -1,23 +1,17 @@
 const express = require('express');
-const app = express(); //create new express application for you
+const app = express();
 const http = require("http"); //need this to build server together with socketio
 const cors = require("cors");
 const {Server} = require("socket.io");
-const router = require("./router")
 app.use(cors());
-app.use(router)
 const server = http.createServer(app);
-const PORT = process.env.PORT || 3001;
-/*
+const PORT = process.env.PORT || 3001
 const io = new Server(server,{
     cors:{
-        origin:"http://localhost:3000", //where we get info from
+        origin: PORT,//"http://localhost:3000", //where we get info from
         methods:["GET","POST"], //what method we accept
     }
 })
-*/
-const io = new Server(server);
-app.use(cors());
 
 io.on("connection",(socket)=>{
     console.log(`User Connected ${socket.id}`);
@@ -34,7 +28,6 @@ io.on("connection",(socket)=>{
     })
 })
 
-server.listen(PORT,()=>{
-    console.log("server running!");
+server.listen(process.env.PORT || 3001,()=>{
+    console.log("server running");
 })
-
